@@ -1,5 +1,5 @@
-sifre = input("şifreyi giriniz:")
-def kontrol():
+password = input("Please enter the password")
+def control():
     ı = 0
     a = 0
     b = 0
@@ -8,14 +8,14 @@ def kontrol():
     f = 0
     g = 0
     h = 0
-    toplam = 0
-    if len(sifre) < 4:
-        print("şifre kısadır")
-    elif len(sifre) > 8:
-        print("şifre büyüktür")
+    total = 0
+    if len(password) < 4:
+        print("Password is short")
+    elif len(password) > 8:
+        print("Password is long")
         
     else:
-        for i in sifre:
+        for i in password:
             if 0< ord(i) <40:
                 ı = 1
             elif 46 < ord(i) < 48:
@@ -27,9 +27,9 @@ def kontrol():
             elif ord(i) > 122:
                 ı = 1
         if ı == 1:
-           print("ŞİFRE YALNIZCA SAYI, HARF VE İZİN VERİLEN ÖZEL KARAKTERLERDEN OLUŞMALI")
+           print("Password must consist only number,letters and special characters allowed")
         else:
-            for i in sifre:
+            for i in password:
                 if 64 < ord(i) < 91:
                     a+=1
                     f  = 1 
@@ -42,30 +42,30 @@ def kontrol():
                 if 39 < ord(i) < 47:
                     d+=1
             if f == 0:
-                print("büyük harf içermelidir")
+                print("Must contain big letters")
             if g == 0:
-                print("rakam içermelidir") 
+                print("Must contain number") 
             if h == 0:
-                print("küçük harf içermelidir")
+                print("Must contain small letters")
             if a*b*c==0:
-                print("geçersiz şifre girilmiştir")
+                print("İnvalid password entered")
             else:
-                print("şifreniz geçerlidir")
+                print("Your password valid")
                 a+=1
                 b+=1
                 c+=1
                 d+=1
-                toplam=(120*a*b*c*d) - 120
-            if toplam < 2000:
-              print("şifreniz çok zayıftır")
-            elif 2000 <= toplam < 4000:
-                print("zayıf şifre")
-            elif 4000 <= toplam < 6000:
-                print("ortalama şifre")
+                total=(120*a*b*c*d) - 120
+            if total < 2000:
+              print("Your password is too weak")
+            elif 2000 <= total < 4000:
+                print("Weak password")
+            elif 4000 <= total < 6000:
+                print("Average password")
             elif 6000 <= toplam < 9000:
-                print("güçlü şifre")
+                print("Strong password")
             else:
-                print("çok güçlü şifre")
+                print("Too strong password")
     
         
-kontrol()
+control()
